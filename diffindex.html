@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Urwa 💖</title>
+
+<!-- FUN FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',system-ui;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
+  color:#fff;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* LOCK & PAGES */
+.lock,.page{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  padding:30px;
+  position:relative;
+}
+.lock.active,.page.active{display:flex}
+
+/* CARD */
+.box{
+  max-width:900px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(12px);
+  border-radius:30px;
+  padding:40px;
+  box-shadow:0 40px 90px rgba(0,0,0,0.3);
+  z-index:2;
+}
+
+h1{
+  font-family:'Pacifico',cursive;
+  font-size:48px;
+}
+h2{
+  font-size:34px;
+  font-weight:800;
+}
+p{
+  font-size:18px;
+  line-height:1.9;
+  color:#fff;
+  margin-bottom:18px;
+}
+
+/* BUTTONS */
+button{
+  margin-top:25px;
+  padding:14px 34px;
+  border:none;
+  border-radius:40px;
+  background:linear-gradient(135deg,#ff5fa2,#7c5cff);
+  color:white;
+  font-weight:700;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+input{
+  width:100%;
+  padding:16px;
+  border-radius:30px;
+  border:none;
+  margin-top:16px;
+  font-size:16px;
+}
+
+.error{color:#ffe1e1;margin-top:12px}
+
+/* FALLING ICONS */
+.fall{
+  position:absolute;
+  top:-10%;
+  font-size:26px;
+  animation:fall linear infinite;
+  opacity:0.9;
+}
+@keyframes fall{
+  to{
+    transform:translateY(120vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* CONFETTI */
+.confetti{
+  position:absolute;
+  width:10px;
+  height:10px;
+  animation:confettiFall linear forwards;
+}
+@keyframes confettiFall{
+  to{
+    transform:translateY(120vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* FINAL TEXT */
+.final-text{
+  font-family:'Pacifico',cursive;
+  font-size:52px;
+  text-align:center;
+  animation:pulse 1.3s infinite alternate;
+}
+@keyframes pulse{
+  to{transform:scale(1.1)}
+}
+
+/* HIDDEN MESSAGE */
+.hidden-btn{
+  margin-top:30px;
+  background:#fff;
+  color:#ff5fa2;
+}
+.hidden-message{
+  margin-top:25px;
+  font-size:22px;
+  font-weight:600;
+  color:#fff7d6;
+  display:none;
+}
+
+footer{
+  margin-top:30px;
+  text-align:center;
+  font-size:14px;
+  opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+<div class="lock active" id="lock">
+  <div class="box">
+    <h2>🔐 Private Birthday Page</h2>
+    <p>This celebration is made specially for Urwa.</p>
+    <input type="password" id="pwd" placeholder="Enter password">
+    <button onclick="unlock()">Unlock 💖</button>
+    <div class="error" id="err"></div>
+  </div>
+</div>
+
+<!-- PAGES -->
+<div class="page"><div class="box">
+<h1>Happy Birthday Urwa 🎂</h1>
+<p>
+Today isn’t just another day — it’s a celebration of someone truly special.
+This little space is made to make you smile, laugh softly, and feel appreciated.
+</p>
+<p>
+Take your time, enjoy every page, and let this journey unfold just for you.
+</p>
+<button onclick="next()">Next ✨</button>
+</div></div>
+
+<div class="page"><div class="box">
+<h2>About You 🌸</h2>
+<p>
+You have a natural grace in the way you speak, think, and exist.
+It’s something that can’t be forced or learned — it’s simply who you are.
+</p>
+<p>
+Your presence has a calm, comforting effect that people truly value.
+</p>
+<button onclick="next()">Next 💖</button>
+</div></div>
+
+<div class="page"><div class="box">
+<h2>Your Personality 💫</h2>
+<p>
+You are thoughtful, kind, and genuinely considerate.
+You listen, you understand, and you care in ways that matter.
+</p>
+<p>
+That warmth you carry makes people feel safe being themselves around you.
+</p>
+<button onclick="next()">Next 🌷</button>
+</div></div>
+
+<div class="page"><div class="box">
+<h2>Your Strength ✨</h2>
+<p>
+You handle life with patience and quiet confidence.
+You don’t need attention to prove how strong you are.
+</p>
+<p>
+That steady strength is one of your most beautiful qualities.
+</p>
+<button onclick="next()">Next 🌸</button>
+</div></div>
+
+<div class="page"><div class="box">
+<h2>Your Growth 🌱</h2>
+<p>
+You keep growing, learning, and becoming better with time.
+Not loudly, not dramatically — but gracefully.
+</p>
+<p>
+It’s inspiring to watch the way you evolve while staying true to yourself.
+</p>
+<button onclick="next()">Next 💫</button>
+</div></div>
+
+<div class="page"><div class="box">
+<h2>What You Bring 💖</h2>
+<p>
+You bring positivity, kindness, and warmth into moments without even trying.
+</p>
+<p>
+Your energy makes ordinary days feel lighter and happier.
+</p>
+<button onclick="next()">Next 🌷</button>
+</div></div>
+
+<div class="page"><div class="box">
+<h2>Wishes For You 🌸</h2>
+<p>
+May your days be filled with happiness that feels real.
+May your heart feel calm, confident, and content.
+</p>
+<p>
+And may every year bring you closer to everything you dream of.
+</p>
+<button onclick="next()">Next 🎉</button>
+</div></div>
+
+<div class="page"><div class="box">
+<h2>Today Is For Joy 🎈</h2>
+<p>
+Today is about smiles, laughter, cake, and moments that feel warm.
+</p>
+<p>
+Celebrate yourself — you truly deserve it.
+</p>
+<button onclick="next()">Next 🎂</button>
+</div></div>
+
+<!-- FINAL PAGE -->
+<div class="page" id="final"><div class="box">
+<div class="final-text">
+HAPPPPYYYYYYYYYYY<br>
+HAPPYYYYYY<br>
+BIRTHDAYYYYY<br>
+URWAAA 🎉💖🌸
+</div>
+
+<button class="hidden-btn" onclick="reveal()">Press on this button for a hidden message</button>
+<div class="hidden-message" id="secret">
+Always waiting for your answer 💖
+</div>
+
+<footer>Made with love, just for Urwa ✨</footer>
+</div></div>
+
+<script>
+const PASSWORD="Urwa21";
+const pages=document.querySelectorAll(".page");
+let current=0;
+
+function unlock(){
+  if(pwd.value===PASSWORD){
+    lock.classList.remove("active");
+    pages[0].classList.add("active");
+  }else{
+    err.innerText="Incorrect password";
+  }
+}
+
+function next(){
+  pages[current].classList.remove("active");
+  current++;
+  if(current<pages.length){
+    pages[current].classList.add("active");
+    spawnFalls();
+    if(pages[current].id==="final") confetti();
+  }
+}
+
+function spawnFalls(){
+  for(let i=0;i<10;i++){
+    const el=document.createElement("div");
+    el.className="fall";
+    el.innerHTML=Math.random()>0.5?"💖":"🌸";
+    el.style.left=Math.random()*100+"%";
+    el.style.animationDuration=(4+Math.random()*4)+"s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),8000);
+  }
+}
+
+function confetti(){
+  for(let i=0;i<160;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"%";
+    c.style.background=`hsl(${Math.random()*360},100%,60%)`;
+    c.style.animationDuration=(3+Math.random()*3)+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),6000);
+  }
+}
+
+function reveal(){
+  document.getElementById("secret").style.display="block";
+}
+</script>
+
+</body>
+</html>
